@@ -1,3 +1,36 @@
+# NeonSunshine-pop-os-22
+
+A personal version of the NeonSunshine program, tweaked for my specific system and requirements.
+Wraps the script setup inside a python virtual environment, because making changes to the base python environment in Ubuntu-based distributions is not recommended and can break in unexpected ways.
+
+## Installation
+```
+git clone git@github.com:Harmonia2Side/NeonSunshine-pop-os-22.git neon-sunshine-pop
+cd neon-sunshine-pop/
+
+conda deactivate
+virtualenv .env
+source .env/bin/activate
+pip install -r requirements.txt
+```
+
+## Usage
+```
+conda deactivate
+source .env/bin/activate
+python NSS.py
+```
+
+## Modifications to the original
+
+## Planned new features
+- [x] Encapsulation by virtual environment for improved stability
+- [] Automated virtual environment setup
+- [] .desktop file and setup for launching the spript from the main launcher
+
+
+> The contents below this line are from the README of the original repository:
+
 # NeonSunshine
 
 `NeonSunshine` is a PyQt5-based GUI application designed to simplify adding games to Sunshine. It supports JSON file loading, sorting, and saving, with optional integration to download cover images from the SteamGridDB API.
