@@ -1,13 +1,15 @@
-# NeonSunshine-pop-os-22
+# NeonSunshineLinux
 
-A personal version of the NeonSunshine program, tweaked for my specific system and requirements.
+A personal version of the NeonSunshine program, tweaked for my specific system and requirements. Tested on Pop_OS 22.04 LTS.
 
-Wraps the script setup inside a python virtual environment, because making changes to the base python environment in Ubuntu-based distributions is not recommended and can break in unexpected ways.
+It essentialy makes the file path Linux-friendly and wraps the script setup inside a python virtual environment, because making changes to the base python environment in Ubuntu-based distributions is not recommended and can break in unexpected ways.
+
+These tweaks probably break windows functionality, hopefully this will be fixed in the future.
 
 ## Installation
 ```
-git clone git@github.com:Harmonia2Side/NeonSunshine-pop-os-22.git neon-sunshine-pop
-cd neon-sunshine-pop/
+git clone git@github.com:Harmonia2Side/NeonSunshineLinux.git neon-sunshine-linux
+cd neon-sunshine-linux/
 
 conda deactivate
 virtualenv .env
@@ -28,6 +30,8 @@ python NSS.py
 - [x] Installation and execution instructions using virtual environment for improved stability
 - [] Automated virtual environment setup
 - [] .desktop file and setup for launching the spript from the main OS launcher
+- [] Rewrite filepath changes for simultaneous compatibility in Linux and Windows
+- [] Contribute enchancement to upstream with proper testing on both platforms
 
 
 > The contents below this line are from the README of the original repository:
