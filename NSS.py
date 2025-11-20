@@ -258,7 +258,7 @@ class SortDialog(QDialog):
                                     logging.debug(f"Fetching new cover for: {updated_name}")
                                     image_path = self.fetch_game_image(updated_name)
                                     if image_path:
-                                        app["image-path"] = image_path.replace("/", "\\")
+                                        app["image-path"] = image_path.replace("/", "/")
                                         logging.debug(f"Updated image-path for {updated_name}: {image_path}")
                                     else:
                                         logging.warning(f"No image found for {updated_name}")
@@ -564,7 +564,7 @@ class FolderScannerApp(QWidget):
     def select_folders(self):
         folder = QFileDialog.getExistingDirectory(self, "Select Folder to Scan")
         if folder:
-            folder = folder.replace("/", "\\")
+            folder = folder.replace("/", "/")
             self.base_folders.append(folder)
             self.scan_folders()
 
@@ -669,7 +669,7 @@ class FolderScannerApp(QWidget):
         for base_folder, subfolders in self.executables.items():
             if base_folder in {"Special", "Manual Entries"}:
                 continue
-            base_label = QLabel("Base Folder: " + base_folder.replace("/", "\\"))
+            base_label = QLabel("Base Folder: " + base_folder.replace("/", "/"))
             base_label.setStyleSheet("font-weight: bold;")
             base_label.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
             self.scroll_layout.addWidget(base_label)
@@ -739,14 +739,14 @@ class FolderScannerApp(QWidget):
                 else:
                     flat_apps.append({
                         "name": data.get("name", os.path.basename(subfolder_path)),
-                        "cmd": "\"" + data["selected_exe"].replace("/", "\\") + "\"",
+                        "cmd": "\"" + data["selected_exe"].replace("/", "/") + "\"",
                         "exclude-global-prep-cmd": "false",
                         "elevated": "false",
                         "auto-detach": "false",
                         "wait-all": "true",
                         "exit-timeout": "5",
-                        "image-path": "\"" + data.get("image-path", subfolder_path).replace("/", "\\") + "\"",
-                        "working-dir": "\"" + data.get("working-dir", subfolder_path).replace("/", "\\") + "\""
+                        "image-path": "\"" + data.get("image-path", subfolder_path).replace("/", "/") + "\"",
+                        "working-dir": "\"" + data.get("working-dir", subfolder_path).replace("/", "/") + "\""
                     })
                     added_keys.add(key)
         for app in self.loaded_apps:
