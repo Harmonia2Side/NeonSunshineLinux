@@ -32,6 +32,7 @@ python NSS.py
 - [] .desktop file and setup for launching the spript from the main OS launcher
 - [] Rewrite filepath changes for simultaneous compatibility in Linux and Windows
 - [] Contribute enchancement to upstream with proper testing on both platforms
+- [] Add setting for automatically and non-interactively add installed games to sunshine (keep games list updated)
 
 
 > The contents below this line are from the README of the original repository:
